@@ -13,6 +13,7 @@ Preview:
 
 ### Wait Control:
 Can be used while waiting data load.
+[More from here](http://habrahabr.ru/post/102105/)
 
 Usage:
 ````

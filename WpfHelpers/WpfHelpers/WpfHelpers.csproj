@@ -29,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -49,7 +50,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceUsage\ResourceLoader.cs" />
     <Compile Include="WpfControls\EditableLabel\EditableLabel.cs" />
+    <Compile Include="WpfControls\Window\AVSCMWindowStyle.cs" />
+    <Compile Include="WpfDataManipulation\Commands\CommandsMap.cs" />
     <Compile Include="WpfDataManipulation\Convertion.cs" />
+    <Compile Include="WpfDataManipulation\XamlConverters\BoolToAnySwitchConverter.cs" />
+    <Compile Include="WpfDataManipulation\XamlConverters\BoolToVisibilityConverter.cs" />
+    <Compile Include="WpfDataManipulation\XamlConverters\ResizeModeToVisibilityConverter.cs" />
+    <Compile Include="WpfDataManipulation\XamlConverters\UniversalValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="WpfControls\EditableLabel\Themes\generic.xaml">
@@ -60,10 +67,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WpfControls\Window\AVSCMWindowStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Content Include="WpfControls\WaitControl\loading_16.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

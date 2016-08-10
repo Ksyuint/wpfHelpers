@@ -1,0 +1,187 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    x:Class="Predator.Design.AVSCMWindowStyle"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:design="clr-namespace:Predator.Design"
+                    xmlns:xamlConverters="clr-namespace:WpfHelpers.WpfDataManipulation.XamlConverters">
+    <design:MouseCursorConverter x:Key="MouseCursorConverter" />
+    <xamlConverters:ResizeModeToVisibilityConverter x:Key="ResizeModeToVisibilityConverter" />
+    <Style TargetType="{x:Type Window}">
+        <Style.Setters>
+            <Setter Property="MinHeight" Value="100" />
+            <Setter Property="MinWidth" Value="100" />
+            <Setter Property="WindowStyle" Value="None" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="MaxWidth" Value="{x:Static SystemParameters.MaximizedPrimaryScreenWidth}"></Setter>
+            <Setter Property="MaxHeight" Value="{x:Static SystemParameters.MaximizedPrimaryScreenHeight}"></Setter>
+            <Setter Property="AllowsTransparency" Value="False" />
+            <Setter Property="WindowChrome.WindowChrome">
+                <Setter.Value>
+                    <WindowChrome CaptionHeight="0" GlassFrameThickness="0" CornerRadius="0"
+                    ResizeBorderThickness="5" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate  TargetType="{x:Type Window}">
+                        <Grid Name="PART_grid" >
+                            <Border Name="PART_Border" BorderBrush="Gray" BorderThickness="1" Width="Auto"
+                                    Height="Auto" Background="{DynamicResource FlatColorBody}">
+                                <DockPanel x:Name="RootWindow" >
+                                    <DockPanel.Resources>
+                                        <Style TargetType="{x:Type Button}" >
+                                            <Setter Property="Margin" Value="2,2" />
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type Button}">
+                                                        <Border Width="15" CornerRadius="2" Height="15"
+                                                                BorderBrush="{TemplateBinding Foreground}"
+                                                                Background="{TemplateBinding Background}">
+                                                            <ContentPresenter Visibility="Visible"
+                                                                              Name="PART_ContentPresenter"
+                                                                              VerticalAlignment="Center"
+                                                                              HorizontalAlignment="Center" />
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter Property="Background" Value="#FF62B1DA" />
+                                                                <Setter TargetName="PART_ContentPresenter"
+                                                                        Property="Visibility" Value="Visible" />
+                                                            </Trigger>
+                                                            <Trigger Property="Button.IsPressed" Value="True">
+                                                                <Setter Property="Background" Value="Red" />
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+
+                                        <Style x:Key="RevertableArrowToggleButton" TargetType="{x:Type ToggleButton}" >
+                                            <Setter Property="Margin" Value="2,2" />
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                                        <Border Width="15" CornerRadius="2" Height="15"
+                                                                BorderBrush="{TemplateBinding Foreground}"
+                                                                Background="{TemplateBinding Background}">
+                                                            <ContentPresenter Visibility="Visible"
+                                                                              Name="PART_ContentPresenter"
+                                                                              VerticalAlignment="Center"
+                                                                              HorizontalAlignment="Center" />
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter Property="Background" Value="#FF62B1DA" />
+                                                                <Setter TargetName="PART_ContentPresenter"
+                                                                        Property="Visibility" Value="Visible" />
+                                                            </Trigger>
+                                                            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                                                                <Setter Property="Content" >
+                                                                    <Setter.Value>
+                                                                        <Path Margin="3" Data="M0,0.5 L0.5,0 L1,0.5" Stretch="Uniform" Stroke="{DynamicResource FlatForegroundDark}" />
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                                <Setter Property="ToolTip" Value="Hide tabs" />
+                                                            </Trigger>
+                                                            <Trigger Property="ToggleButton.IsChecked" Value="False">
+                                                                <Setter Property="Background" Value="{DynamicResource FlatAction}" />
+                                                                <Setter Property="Content" >
+                                                                    <Setter.Value>
+                                                                        <Path Margin="3" Data="M0,0.5 L0.5,1 L1,0.5" Stretch="Uniform" Stroke="{DynamicResource FlatForegroundDark}" />
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                                <Setter Property="ToolTip" Value="Show tabs"  />
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </DockPanel.Resources>
+                                    <DockPanel LastChildFill="True" DockPanel.Dock="Top" x:Name="TitleBar" Background="{DynamicResource FlatColorTitleBar}"
+                                               MouseDown="TitleBar_MouseDown"  VerticalAlignment="Bottom">
+                                        <Button ToolTip="Close" Focusable="False" Click="CloseButton_Click"
+                                                x:Name="CloseButton" DockPanel.Dock="Right" Margin="2,2,4,2">
+                                            <Path Margin="3" Data="M0,0 L1,1 M0,1 L1,0 " Stretch="Uniform"
+                                                  Stroke="{DynamicResource FlatForegroundDark}" />
+                                        </Button>
+                                        <Button ToolTip="Resize" Focusable="False" Click="MaximizeButton_Click"
+                                                x:Name="MaximizeButton"
+                                                Visibility="{TemplateBinding ResizeMode,Converter={StaticResource  ResizeModeToVisibilityConverter}}"
+                                                DockPanel.Dock="Right">
+                                            <Path Margin="3" Data="M0,0 L0,1 L1,1 L1,0 L0,0" Stretch="Uniform"
+                                                  Stroke="{DynamicResource FlatForegroundDark}" />
+                                        </Button>
+                                        <Button ToolTip="Minimize" Focusable="False" Click="MinimizeButton_Click"
+                                                x:Name="MinButton" DockPanel.Dock="Right"
+                                                Visibility="{TemplateBinding ResizeMode,Converter={StaticResource  ResizeModeToVisibilityConverter}}">
+                                            <Path Margin="3" Data="M0,0.5 L1,0.5" Stretch="Uniform" Stroke="{DynamicResource FlatForegroundDark}" />
+                                        </Button>
+                                        <ToggleButton Style="{StaticResource RevertableArrowToggleButton}" Focusable="False" IsChecked="{Binding HidePanels}"
+                                                x:Name="HideButton" DockPanel.Dock="Right"
+                                                Visibility="{TemplateBinding ResizeMode,Converter={StaticResource  ResizeModeToVisibilityConverter}}">
+                                        </ToggleButton>
+
+                                        <ToggleButton Margin="4,2,2,2" ToolTip="Content list" Focusable="False" IsChecked="{Binding ListIsOpen}"
+                                                x:Name="ListButton" DockPanel.Dock="Left" Foreground="{StaticResource FlatColorBackground}"
+                                                      Style="{DynamicResource MaterialDesignHamburgerToggleButton}"
+                                                Visibility="{TemplateBinding ResizeMode,Converter={StaticResource  ResizeModeToVisibilityConverter}}">
+                                            <!--<Path Margin="3" Data="M0.5,0.5  L0.6,0.5z M0.5,0.2  L0.6,0.2z M0.5,0.8  L0.6,0.8z" Stretch="Uniform" Stroke="{DynamicResource FlatColorBack}" />-->
+                                        </ToggleButton>
+
+                                        <Label HorizontalContentAlignment="Center" Foreground="White"
+                                                   VerticalAlignment="Center" Content="{TemplateBinding Title}" />
+                                    </DockPanel>
+                                    <AdornerDecorator>
+                                        <ContentPresenter  />
+                                    </AdornerDecorator>
+                                </DockPanel>
+                            </Border>
+                            <Line
+                                MouseDown="OnSizeNorth"
+                                x:Name="lnSizeNorth"
+                                Stroke="Transparent"
+                                Cursor="{TemplateBinding ResizeMode, Converter={StaticResource MouseCursorConverter}, ConverterParameter='SizeNS'}"
+                                X1="1" X2="{TemplateBinding ActualWidth}" Y1="1" Y2="1"
+                                StrokeThickness="3" />
+                            <Line
+                                MouseDown="OnSizeWest"
+                                x:Name="lnSizeWest"
+                                Stroke="Transparent"
+                                Cursor="{TemplateBinding ResizeMode, Converter={StaticResource MouseCursorConverter}, ConverterParameter='SizeWE'}"
+                                X1="1" X2="1" Y1="1" Y2="{TemplateBinding ActualHeight}"
+                                StrokeThickness="3" />
+                            <Line
+                                MouseDown="OnSizeEast"
+                                x:Name="lnSizeEast"
+                                Stroke="Transparent"
+                                HorizontalAlignment="Right"
+                                Cursor="{TemplateBinding ResizeMode, Converter={StaticResource MouseCursorConverter}, ConverterParameter='SizeWE'}"
+                                X1="{TemplateBinding ActualWidth}" X2="{TemplateBinding ActualWidth}" Y1="1"
+                                Y2="{TemplateBinding ActualHeight}"
+                                StrokeThickness="3" />
+                            <Rectangle MouseDown="OnSizeNorthWest" x:Name="rectSizeNorthWest" Cursor="SizeNWSE"
+                                       Fill="Transparent" Width="5" Height="5" VerticalAlignment="Top"
+                                       HorizontalAlignment="Left" />
+                            <Rectangle MouseDown="OnSizeNorthEast" x:Name="rectSizeNorthEast" Cursor="SizeNESW"
+                                       Fill="Transparent" Width="5" Height="5" VerticalAlignment="Top"
+                                       HorizontalAlignment="Right" />
+                            <Rectangle MouseDown="OnSizeSouthWest" x:Name="rectSizeSouthWest" Cursor="SizeNESW"
+                                       Fill="Transparent" Width="5" Height="5" VerticalAlignment="Bottom"
+                                       HorizontalAlignment="Left" />
+                            <Rectangle MouseDown="OnSizeSouthEast" x:Name="rectSizeSouthEast" Cursor="SizeNWSE"
+                                       Fill="Transparent" Width="5" Height="5" VerticalAlignment="Bottom"
+                                       HorizontalAlignment="Right" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="WindowState" Value="Maximized">
+                                <Setter TargetName="PART_grid" Property="ClipToBounds" Value="True"></Setter>
+                                <Setter TargetName="PART_Border" Property="Padding" Value="5"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+</ResourceDictionary>

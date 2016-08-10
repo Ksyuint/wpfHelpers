@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Drawing\WriteableBitmap.cs" />
+    <Compile Include="Helpers\CenteredMessageBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceUsage\ResourceLoader.cs" />
     <Compile Include="WpfControls\EditableLabel\EditableLabel.cs" />
@@ -73,7 +74,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="WpfControls\WaitControl\loading_16.png" />
+    <Resource Include="WpfControls\WaitControl\loading_16.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

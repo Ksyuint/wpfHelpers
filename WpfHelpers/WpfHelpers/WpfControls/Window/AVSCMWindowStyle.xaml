@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    x:Class="Predator.Design.AVSCMWindowStyle"
+                    x:Class="WpfHelpers.WpfControls.Window.AVSCMWindowStyle"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:design="clr-namespace:Predator.Design"
-                    xmlns:xamlConverters="clr-namespace:WpfHelpers.WpfDataManipulation.XamlConverters">
-    <design:MouseCursorConverter x:Key="MouseCursorConverter" />
+                    xmlns:xamlConverters="clr-namespace:WpfHelpers.WpfDataManipulation.XamlConverters"
+                    xmlns:window="clr-namespace:WpfHelpers.WpfControls.Window">
+    <window:MouseCursorConverter x:Key="MouseCursorConverter" />
     <xamlConverters:ResizeModeToVisibilityConverter x:Key="ResizeModeToVisibilityConverter" />
     <Style TargetType="{x:Type Window}">
         <Style.Setters>

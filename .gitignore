@@ -1,5 +1,7 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/WpfHelpers/WpfHelpers/bin/Release/WpfHelpers.pdb
+﻿*.suo
+*.user
+*.dll
+_ReSharper.*
+bin
+obj
+packages

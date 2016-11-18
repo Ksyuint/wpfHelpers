@@ -5,7 +5,7 @@
                     xmlns:window="clr-namespace:WpfHelpers.WpfControls.Window">
     <window:MouseCursorConverter x:Key="MouseCursorConverter" />
     <xamlConverters:ResizeModeToVisibilityConverter x:Key="ResizeModeToVisibilityConverter" />
-    <Style TargetType="{x:Type Window}">
+    <Style x:Key="AvsWindowStyle" TargetType="{x:Type Window}">
         <Style.Setters>
             <Setter Property="MinHeight" Value="100" />
             <Setter Property="MinWidth" Value="100" />
@@ -121,6 +121,8 @@
                                                 x:Name="HideButton" DockPanel.Dock="Right"
                                                 Visibility="{TemplateBinding ResizeMode,Converter={StaticResource  ResizeModeToVisibilityConverter}}">
                                         </ToggleButton>
+
+                                        <ContentControl DockPanel.Dock="Right" Content="{Binding RelativeSource={RelativeSource TemplatedParent},Path=(window:TitleBarEx.TitleAdditionalContent)}" />
 
                                         <ToggleButton Margin="4,2,2,2" ToolTip="Content list" Focusable="False" IsChecked="{Binding ListIsOpen}"
                                                 x:Name="ListButton" DockPanel.Dock="Left" Foreground="{StaticResource FlatColorBackground}"

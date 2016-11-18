@@ -30,7 +30,17 @@ namespace WpfHelpers.WpfDataManipulation.XamlConverters
         /// <param name="culture">The culture to use in the converter.</param>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value is bool && (bool) value && (parameter == null || !parameter.Equals('r')) ? IfTrue : IfFalse;
+            if (value is bool)
+            {
+                var result = (bool) value;
+
+                if (parameter != null && parameter.Equals("r"))
+                    result = !result;
+
+                return result ? IfTrue : IfFalse;
+            }
+
+            return IfFalse;
         }
 
         /// <summary>

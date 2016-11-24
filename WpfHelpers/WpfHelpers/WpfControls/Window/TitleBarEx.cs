@@ -11,7 +11,6 @@ namespace WpfHelpers.WpfControls.Window
 {
     public class TitleBarEx
     {
-        private static UIElement _value = new UIElement();
         public static readonly DependencyProperty ButtonsInTitleBarProperty = DependencyProperty.RegisterAttached(
             "TitleAdditionalContent", typeof(UIElement), typeof(TitleBarEx), new PropertyMetadata(null));
 
@@ -23,6 +22,19 @@ namespace WpfHelpers.WpfControls.Window
         public static UIElement GetTitleAdditionalContent(DependencyObject element)
         {
             return (UIElement)element.GetValue(ButtonsInTitleBarProperty);
+        }
+
+        public static readonly DependencyProperty LeftTitleBarProperty = DependencyProperty.RegisterAttached(
+            "LeftTitleBar", typeof (UIElement), typeof (TitleBarEx), new PropertyMetadata(default(UIElement)));
+
+        public static void SetLeftTitleBar(DependencyObject element, UIElement value)
+        {
+            element.SetValue(LeftTitleBarProperty, value);
+        }
+
+        public static UIElement GetLeftTitleBar(DependencyObject element)
+        {
+            return (UIElement)element.GetValue(LeftTitleBarProperty);
         }
     }
 }

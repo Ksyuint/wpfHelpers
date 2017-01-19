@@ -56,6 +56,11 @@
     <Compile Include="WpfControls\EditableLabel\EditableLabel.cs" />
     <Compile Include="WpfControls\Window\AVSCMWindowStyle.cs" />
     <Compile Include="WpfControls\Window\TitleBarEx.cs" />
+    <Compile Include="WpfDataManipulation\Commands\Async\AsyncCommand.cs" />
+    <Compile Include="WpfDataManipulation\Commands\Async\AsyncCommandBase.cs" />
+    <Compile Include="WpfDataManipulation\Commands\Async\AsyncCommandEx.cs" />
+    <Compile Include="WpfDataManipulation\Commands\Async\IAsyncCommand.cs" />
+    <Compile Include="WpfDataManipulation\Commands\Async\NotifyTaskCompletion.cs" />
     <Compile Include="WpfDataManipulation\Commands\CommandsMap.cs" />
     <Compile Include="WpfDataManipulation\Convertion.cs" />
     <Compile Include="WpfDataManipulation\XamlConverters\BoolToAnySwitchConverter.cs" />

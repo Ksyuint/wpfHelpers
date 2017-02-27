@@ -62,6 +62,14 @@
     <Compile Include="WpfDataManipulation\Commands\Async\IAsyncCommand.cs" />
     <Compile Include="WpfDataManipulation\Commands\Async\NotifyTaskCompletion.cs" />
     <Compile Include="WpfDataManipulation\Commands\CommandsMap.cs" />
+    <Compile Include="WpfDataManipulation\Commands\Sync\Helpers\IExecuteWithObject.cs" />
+    <Compile Include="WpfDataManipulation\Commands\Sync\Helpers\IExecuteWithObjectAndResult.cs" />
+    <Compile Include="WpfDataManipulation\Commands\Sync\Helpers\WeakAction.cs" />
+    <Compile Include="WpfDataManipulation\Commands\Sync\Helpers\WeakActionGeneric.cs" />
+    <Compile Include="WpfDataManipulation\Commands\Sync\Helpers\WeakFunc.cs" />
+    <Compile Include="WpfDataManipulation\Commands\Sync\Helpers\WeakFuncGeneric.cs" />
+    <Compile Include="WpfDataManipulation\Commands\Sync\RelayCommand.cs" />
+    <Compile Include="WpfDataManipulation\Commands\Sync\RelayCommandGeneric.cs" />
     <Compile Include="WpfDataManipulation\Convertion.cs" />
     <Compile Include="WpfDataManipulation\XamlConverters\BoolToAnySwitchConverter.cs" />
     <Compile Include="WpfDataManipulation\XamlConverters\BoolToVisibilityConverter.cs" />

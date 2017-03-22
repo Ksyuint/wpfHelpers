@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>WpfHelpers</id>
+    <version>1.0.1-beta</version>
+    <authors>Igor Znakes</authors>
+    <owners>Igor Znakes</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/Znakes/wpfHelpers</projectUrl>
+    <iconUrl>http://multidoge.org/images/MultiDoge.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Collection of routine classes. Were copied during my lifetime.</description>
+    <releaseNotes>Initial commit.</releaseNotes>
+    <copyright>Copyright 2017 Znakes</copyright>
+    <tags>Wpf Helpers Commands</tags>
+  </metadata>
+  <files>
+    <file src="WpfHelpers\bin\Release\WpfHelpers.dll" target="lib\net45" />
+    <file src="WpfHelpers\bin\Release\WpfHelpers.pdb" target="lib\net45" />
+  </files>  
+</package>

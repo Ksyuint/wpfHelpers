@@ -54,8 +54,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceUsage\ResourceLoader.cs" />
     <Compile Include="WpfControls\EditableLabel\EditableLabel.cs" />
+    <Compile Include="WpfControls\TrackerControl\Tracker.cs" />
+    <Compile Include="WpfControls\TrackerControl\TrackersController.cs" />
     <Compile Include="WpfControls\Window\AVSCMWindowStyle.cs" />
     <Compile Include="WpfControls\Window\TitleBarEx.cs" />
+    <Compile Include="WpfDataManipulation\XamlConverters\DoubleToLog10Converter.cs" />
+    <Compile Include="WpfDataManipulation\XamlConverters\EqualityToBooleanConverter.cs" />
+    <Compile Include="WpfControls\Zoombox\ZoomContentPresenter.cs" />
+    <Compile Include="WpfControls\Zoombox\ZoomControl.cs" />
+    <Compile Include="WpfControls\Zoombox\ZoomControlModes.cs" />
+    <Compile Include="WpfControls\Zoombox\ZoomViewModifierMode.cs" />
     <Compile Include="WpfDataManipulation\Commands\Async\AsyncCommand.cs" />
     <Compile Include="WpfDataManipulation\Commands\Async\AsyncCommandBase.cs" />
     <Compile Include="WpfDataManipulation\Commands\Async\AsyncCommandEx.cs" />
@@ -88,6 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WpfControls\Window\AVSCMWindowStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfControls\Zoombox\Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

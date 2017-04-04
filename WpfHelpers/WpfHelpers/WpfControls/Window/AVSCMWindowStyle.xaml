@@ -136,10 +136,6 @@
                                                 Visibility="{TemplateBinding ResizeMode,Converter={StaticResource  ResizeModeToVisibilityConverter}}">
                                             <Path Margin="3" Data="M0,0.5 L1,0.5" Stretch="Uniform" Stroke="{DynamicResource FlatForegroundDark}" />
                                         </Button>
-                                        <ToggleButton Style="{StaticResource RevertableArrowToggleButton}" Focusable="False" IsChecked="{Binding HidePanels}"
-                                                x:Name="HideButton" DockPanel.Dock="Right"
-                                                Visibility="{TemplateBinding ResizeMode,Converter={StaticResource  ResizeModeToVisibilityConverter}}">
-                                        </ToggleButton>
 
                                         <ContentControl DockPanel.Dock="Left" Content="{Binding RelativeSource={RelativeSource TemplatedParent},Path=(window:TitleBarEx.LeftTitleBar)}" />
                                         <ContentControl DockPanel.Dock="Right" Content="{Binding RelativeSource={RelativeSource TemplatedParent},Path=(window:TitleBarEx.TitleAdditionalContent)}" />

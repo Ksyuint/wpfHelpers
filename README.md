@@ -18,7 +18,7 @@ Can be used while waiting data load.
 [Read more here](http://habrahabr.ru/post/102105/)
 
 Usage:
-````
+```
 <ListBox x:Name="ItemsListBox" 
     <ListBox x:Name="ItemsListBox" 
             Grid.Row="0" 
@@ -34,7 +34,7 @@ Usage:
         </Style>
     </ListBox.Style>
 </ListBox>
-````
+```
 
 Result: 
 
@@ -45,7 +45,7 @@ Allow to draw lines and polylines on canvas by mouse/code
 
 Usage:
 
-````
+```
 var tracker = new TrackersController(Application.Current.MainWindow, Canvas);
 tracker.Init();
 track.AddPoint(new Point(100,100));
@@ -55,13 +55,13 @@ track.AddPoint(new Point(70,40));
 
 Preview:
 
-![](https://github.com/Znakes/wpfHelpers/blob/master/docs/tracker.PNG)
+<img src="https://github.com/Znakes/wpfHelpers/blob/master/docs/tracker.PNG" height="200">
 
 ### Tracker control
 Simple control to zoom and pan controls
 
 Usage:
-````
+```
 <zoombox:ZoomControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 	<Canvas x:Name="Canvas" ClipToBounds="True"
 			Width="{Binding ElementName=Host, Path=ActualWidth}"
@@ -73,7 +73,7 @@ Usage:
 
 Preview:
 
-![](https://github.com/Znakes/wpfHelpers/blob/master/docs/zoom.PNG)
+<img src="https://github.com/Znakes/wpfHelpers/blob/master/docs/zoom.PNG">
 
 ## Collections
 

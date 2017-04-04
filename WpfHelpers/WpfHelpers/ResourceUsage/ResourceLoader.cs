@@ -8,7 +8,7 @@ using System.Windows.Media.Imaging;
 
 namespace WpfHelpers.ResourceUsage
 {
-    class ResourceLoader
+    public class ResourceLoader
     {
         // from http://stackoverflow.com/questions/347614/wpf-image-resources
 

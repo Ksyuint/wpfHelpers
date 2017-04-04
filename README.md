@@ -1,4 +1,4 @@
-## Some wpf helpers:
+## Some wpf controls:
 * Editable label
 * WaitControl
 * Tracker control
@@ -79,3 +79,7 @@ Preview:
 
 * Object pool
 * Limited object pool with blocking
+
+## Helpers
+
+* ResourceLoader

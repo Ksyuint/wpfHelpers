@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>WpfHelpers</id>
-    <version>1.1.0-beta</version>
+    <version>1.1.4-beta</version>
     <authors>Igor Znakes</authors>
     <owners>Igor Znakes</owners>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
@@ -10,9 +10,9 @@
     <iconUrl>http://multidoge.org/images/MultiDoge.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Collection of routine classes. Were copied (or created) during my lifetime.</description>
-    <releaseNotes>Add TrackerControl, ZoomControl.</releaseNotes>
+    <releaseNotes>Added collections</releaseNotes>
     <copyright>Copyright 2017 Znakes</copyright>
-    <tags>Wpf Helpers Commands Zoom Tracker</tags>
+    <tags>Wpf Helpers Commands Zoom Tracker ObjectPool</tags>
   </metadata>
   <files>
     <file src="WpfHelpers\bin\Release\WpfHelpers.dll" target="lib\net45" />

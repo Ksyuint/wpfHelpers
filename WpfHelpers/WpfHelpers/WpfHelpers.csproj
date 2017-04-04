@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animation\GridLengthAimation.cs" />
+    <Compile Include="Collections\LimitedObjectPool.cs" />
+    <Compile Include="Collections\ObjectPool.cs" />
     <Compile Include="Drawing\WriteableBitmap.cs" />
     <Compile Include="Helpers\CenteredMessageBox.cs" />
     <Compile Include="Helpers\GridHelpers.cs" />

@@ -1,6 +1,8 @@
 ## Some wpf helpers:
 * Editable label
 * WaitControl
+* Tracker control
+* Zoombox
 
 ***
 
@@ -38,3 +40,42 @@ Result:
 
 ![](http://habrastorage.org/storage/habraeffect/f8/0a/f80a12e2bb303dbc7dc288f7df0dee41.jpg)
 
+### Tracker control
+Allow to draw lines and polylines on canvas by mouse/code
+
+Usage:
+
+````
+var tracker = new TrackersController(Application.Current.MainWindow, Canvas);
+tracker.Init();
+track.AddPoint(new Point(100,100));
+track.AddPoint(new Point(50,50));
+track.AddPoint(new Point(70,40));
+```
+
+Preview:
+
+![](https://github.com/Znakes/wpfHelpers/blob/master/docs/tracker.PNG)
+
+### Tracker control
+Simple control to zoom and pan controls
+
+Usage:
+````
+<zoombox:ZoomControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+	<Canvas x:Name="Canvas" ClipToBounds="True"
+			Width="{Binding ElementName=Host, Path=ActualWidth}"
+			Height="{Binding ElementName=Host, Path=ActualHeight}" RenderTransformOrigin="0.5,0.5">
+		<Image Name="Host" Source="..." Stretch="Fill"  />
+	</Canvas>
+</zoombox:ZoomControl>
+```
+
+Preview:
+
+![](https://github.com/Znakes/wpfHelpers/blob/master/docs/zoom.PNG)
+
+## Collections
+
+* Object pool
+* Limited object pool with blocking

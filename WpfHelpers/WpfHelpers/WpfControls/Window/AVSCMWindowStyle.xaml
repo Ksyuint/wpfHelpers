@@ -74,48 +74,6 @@
                                                 </Setter.Value>
                                             </Setter>
                                         </Style>
-
-                                        <Style x:Key="RevertableArrowToggleButton" TargetType="{x:Type ToggleButton}" >
-                                            <Setter Property="Margin" Value="2,2" />
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="{x:Type ToggleButton}">
-                                                        <Border Width="15" CornerRadius="2" Height="15"
-                                                                BorderBrush="{TemplateBinding Foreground}"
-                                                                Background="{TemplateBinding Background}">
-                                                            <ContentPresenter Visibility="Visible"
-                                                                              Name="PART_ContentPresenter"
-                                                                              VerticalAlignment="Center"
-                                                                              HorizontalAlignment="Center" />
-                                                        </Border>
-                                                        <ControlTemplate.Triggers>
-                                                            <Trigger Property="IsMouseOver" Value="True">
-                                                                <Setter Property="Background" Value="#FF62B1DA" />
-                                                                <Setter TargetName="PART_ContentPresenter"
-                                                                        Property="Visibility" Value="Visible" />
-                                                            </Trigger>
-                                                            <Trigger Property="ToggleButton.IsChecked" Value="True">
-                                                                <Setter Property="Content" >
-                                                                    <Setter.Value>
-                                                                        <Path Margin="3" Data="M0,0.5 L0.5,0 L1,0.5" Stretch="Uniform" Stroke="{DynamicResource FlatForegroundDark}" />
-                                                                    </Setter.Value>
-                                                                </Setter>
-                                                                <Setter Property="ToolTip" Value="Hide tabs" />
-                                                            </Trigger>
-                                                            <Trigger Property="ToggleButton.IsChecked" Value="False">
-                                                                <Setter Property="Background" Value="{DynamicResource FlatAction}" />
-                                                                <Setter Property="Content" >
-                                                                    <Setter.Value>
-                                                                        <Path Margin="3" Data="M0,0.5 L0.5,1 L1,0.5" Stretch="Uniform" Stroke="{DynamicResource FlatForegroundDark}" />
-                                                                    </Setter.Value>
-                                                                </Setter>
-                                                                <Setter Property="ToolTip" Value="Show tabs"  />
-                                                            </Trigger>
-                                                        </ControlTemplate.Triggers>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
                                     </DockPanel.Resources>
                                     <DockPanel LastChildFill="True" DockPanel.Dock="Top" x:Name="TitleBar" Background="{DynamicResource FlatColorTitleBar}"
                                                MouseDown="TitleBar_MouseDown"  VerticalAlignment="Bottom">

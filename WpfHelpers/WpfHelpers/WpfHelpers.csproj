@@ -32,12 +32,17 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.5\Libraries\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,13 +58,22 @@
     <Compile Include="Drawing\WriteableBitmap.cs" />
     <Compile Include="Helpers\CenteredMessageBox.cs" />
     <Compile Include="Helpers\GridHelpers.cs" />
+    <Compile Include="PasswordBehavior\PasswordBehavior.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceUsage\ResourceLoader.cs" />
     <Compile Include="WpfControls\EditableLabel\EditableLabel.cs" />
+    <Compile Include="WpfControls\Paging\CurrentPageChangedEventArgs.cs" />
+    <Compile Include="WpfControls\Paging\PagingController.cs" />
     <Compile Include="WpfControls\TrackerControl\Tracker.cs" />
     <Compile Include="WpfControls\TrackerControl\TrackersController.cs" />
+    <Compile Include="WpfControls\VirtualizingTilePanel.cs" />
     <Compile Include="WpfControls\Window\AVSCMWindowStyle.cs" />
     <Compile Include="WpfControls\Window\TitleBarEx.cs" />
+    <Compile Include="WpfDataManipulation\Rules\Converters\ValidationErrorsToStringConverter.cs" />
+    <Compile Include="WpfDataManipulation\Rules\GenericRangeValidationRule.cs" />
+    <Compile Include="WpfDataManipulation\Rules\IpRule.cs" />
+    <Compile Include="WpfDataManipulation\Rules\NotNullOrEmptyRule.cs" />
+    <Compile Include="WpfDataManipulation\Rules\RegexValidationRule.cs" />
     <Compile Include="WpfDataManipulation\XamlConverters\DoubleToLog10Converter.cs" />
     <Compile Include="WpfDataManipulation\XamlConverters\EqualityToBooleanConverter.cs" />
     <Compile Include="WpfControls\Zoombox\ZoomContentPresenter.cs" />
@@ -86,6 +100,7 @@
     <Compile Include="WpfDataManipulation\XamlConverters\InvertBoolConverter.cs" />
     <Compile Include="WpfDataManipulation\XamlConverters\RadioButtonGroupConverter.cs" />
     <Compile Include="WpfDataManipulation\XamlConverters\ResizeModeToVisibilityConverter.cs" />
+    <Compile Include="WpfDataManipulation\XamlConverters\StringToIpAddressConverter.cs" />
     <Compile Include="WpfDataManipulation\XamlConverters\UniversalValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>

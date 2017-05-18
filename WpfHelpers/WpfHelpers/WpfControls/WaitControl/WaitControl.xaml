@@ -30,7 +30,7 @@
                        Height="16" 
                        Margin="5,0"
                        SnapsToDevicePixels="True"
-                       Source="loading_16.png">
+                       Source="pack://application:,,,/WpfHelpers;component/WpfControls/WaitControl/loading_16.png">
                     <Image.RenderTransform>
                         <RotateTransform CenterX="8" CenterY="8" />
                     </Image.RenderTransform>
